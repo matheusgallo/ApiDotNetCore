@@ -39,11 +39,11 @@ namespace ApiGraoOuro.Controllers
     }
 
     //// GET api/values/5
-    [HttpGet("{id}")]
-    public ActionResult<Usuario> Get(int id)
-    {
-        return _context.Usuario.FirstOrDefault(x => id == x.UsuarioId);
-    }
+    // [HttpGet("{id}")]
+    // public ActionResult<Usuario> Get(int id)
+    // {
+    //     return _context.Usuario.FirstOrDefault(x => id == x.UsuarioId);
+    // }
 
     //// POST api/values
     //[HttpPost]
