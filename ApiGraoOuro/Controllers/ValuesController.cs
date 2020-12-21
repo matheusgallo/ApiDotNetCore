@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiGraoOuro.Data;
-using ApiGraoOuro.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Repository.Data;
 
 namespace ApiGraoOuro.Controllers
 {
@@ -14,9 +13,9 @@ namespace ApiGraoOuro.Controllers
   [ApiController]
   public class ValuesController : ControllerBase
   {
-    public readonly DataContext _context;
+    public readonly RepositoryContext _context;
 
-    public ValuesController(DataContext context)
+    public ValuesController(RepositoryContext context)
     {
       _context = context;
     }

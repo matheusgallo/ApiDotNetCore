@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ApiGraoOuro.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Repository;
+using Repository.Data;
 
 namespace ApiGraoOuro
 {
@@ -29,9 +30,11 @@ namespace ApiGraoOuro
         {
             var connection = Configuration["ConnectionString:DefaultConnection"];
             
-            services.AddDbContext<DataContext>(x => 
+            services.AddDbContext<RepositoryContext>(x => 
                 x.UseSqlite(connection)
             );
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<ITarefaRepository, TarefaRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

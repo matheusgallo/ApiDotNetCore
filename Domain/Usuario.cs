@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApiGraoOuro.Models
+namespace Domain
 {
     public class Usuario
     {
@@ -13,6 +13,8 @@ namespace ApiGraoOuro.Models
 
         public string Login { get; set; }
 
-        public string senha { get; set; }
+        public string Senha { get; set; }
+
+        public  List<Tarefa> Tarefas { get; set; }
     }
 }
